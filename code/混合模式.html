@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>混合模式创建对象</title>
+<script>
+function Student(name,age,sex){
+ //工厂模式创建的属性
+ this.name=name;
+ this.age=age;
+ this.sex=sex;	
+}
+//原型模式创建方法
+Student.prototype.showInfo=function(){
+alert("姓名:"+this.name+"\n"+"年龄:"+this.age+"\n"+"性别:"+this.sex);	
+};
+//创建对象:
+var stu1=new Student("Tom",19,"男");
+alert(stu1.name);
+stu1.showInfo();
+var t2=new Student("Jarry",21,"男");
+alert(stu1.showInfo==t2.showInfo);
+</script>
+</head>
+
+<body>
+</body>
+</html>

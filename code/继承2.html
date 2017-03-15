@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>继承</title>
+<script>
+//创建父类Person
+function Person(name,age,sex){
+ this.name=name;
+ this.age=age;
+ this.sex=sex;
+}
+Person.prototype.showInfo=function(){
+	alert("姓名:"+this.name+"\n"+"年龄:"+this.age+"\n"+"性别:"+this.sex);
+};
+
+//子类Student继承父类的属性和方法
+function Student(name,age,sex,sno,sdept){
+   //Person.call(this,name,age,sex);
+   Person.apply(this,[name,age,sex]);
+   this.sno=sno;
+   this.sedpt=sdept;
+}
+Student.prototype.study=function(){
+ alert("好好学习，天天向上");	
+};
+//原型拷贝
+for(var i in Person.prototype){
+   Student.prototype[i]=Person.prototype[i];	
+}
+//创建学生对象stu1
+var stu1=new Student("Tom",19,"男");
+alert(stu1.name);
+stu1.showInfo();
+stu1.study();
+</script>
+</head>
+
+<body>
+</body>
+</html>

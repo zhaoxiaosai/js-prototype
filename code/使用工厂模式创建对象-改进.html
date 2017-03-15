@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>使用工厂模式创建对象-改进版</title>
+<script>
+function Student(name,age,sex){
+   	//原料
+	//var obj=new Object();//空瓶子
+	this.name=name;
+	this.age=age;
+	this.sex=sex;
+	this.showInfo=function(){
+	alert("姓名:"+this.name+"\n"+"年龄:"+this.age+"\n"+"性别:"+this.sex);
+	};
+	//return obj;//成品出厂
+}
+
+//创建学生对象stu1
+var stu1=new  Student("Tom",19,"男");
+alert(stu1.name);
+stu1.showInfo();
+//创建学生对象t2
+var t2=new Student("Jarry",21,"男");
+alert(stu1.showInfo==t2.showInfo);
+</script>
+</head>
+
+<body>
+</body>
+</html>

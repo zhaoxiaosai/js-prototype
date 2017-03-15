@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>call apply</title>
+<script>
+function test(name){
+	alert(this);
+	alert(name);
+	}
+	test.apply(12,["tom"]);
+</script>
+</head>
+
+<body>
+</body>
+</html>
